@@ -138,7 +138,7 @@ func cmdSendSpoofedImgReply(args []string) (output string) {
 
 func cmdSendSpoofedDemo(args []string) (output string) {
 	if len(args) < 4 {
-		output = "\n[send-spoofed-demo] Usage: send-spoofed-demo <toGender:boy|girl> <language:br|en> <chat_jid> <spoofed_jid>"
+		output = "\n[send-spoofed-demo] Usage: send-spoofed-demo <toGender:boy|girl> <language:br|en|fr> <chat_jid> <spoofed_jid>"
 		log.Errorf("%s", output)
 		return
 	}
@@ -153,8 +153,8 @@ func cmdSendSpoofedDemo(args []string) (output string) {
 	}
 
 	var language string
-	if args[1] != "br" && args[1] != "en" {
-		output = "\n[send-spoofed-demo] Error: <br|en>"
+	if args[1] != "br" && args[1] != "en" && args[1] != "fr" {
+		output = "\n[send-spoofed-demo] Error: <br|en|fr>"
 		log.Errorf("%s", output)
 		return
 	} else {
