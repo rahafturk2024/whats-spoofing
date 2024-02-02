@@ -175,6 +175,21 @@ func sendSpoofedTalkDemo(chatJID types.JID, spoofedJID types.JID, toGender strin
 	msgmap["en"]["girl"] = make(map[int]string)
 	msgmap["en"]["girl"][0] = "Last night was wonderful, come more often when my husband isn't here..."
 	msgmap["en"]["girl"][1] = "All yours!"
+	msgmap["fr"] = make(map[string]map[int]string)
+	msgmap["fr"]["generic"] = make(map[int]string)
+	msgmap["fr"]["generic"][0] = "Salut..."
+	msgmap["fr"]["generic"][1] = "J'ai aussi adoré la nuit dernière..."
+	msgmap["fr"]["generic"][2] = "❤️❤️❤️❤️❤️"
+	msgmap["fr"]["generic"][3] = "Pour toi, je suis toujours disponible, mon amour..."
+	msgmap["fr"]["generic"][4] = "Appelle-moi et je viendrai..."
+	msgmap["fr"]["generic"][5] = "Mes délices..."
+	msgmap["fr"]["generic"][6] = "J'ai adoré ce motel que tu as choisi rien que pour nous deux..."
+	msgmap["fr"]["boy"] = make(map[int]string)
+	msgmap["fr"]["boy"][0] = "La nuit dernière a été merveilleuse, viens plus souvent quand ma femme n'est pas là..."
+	msgmap["fr"]["boy"][1] = "Tout à vous !"
+	msgmap["fr"]["fille"] = make(map[int]string)
+	msgmap["fr"]["girl"][0] = "La nuit dernière a été merveilleuse, viens plus souvent quand mon mari n'est pas là..."
+	msgmap["fr"]["girl"][1] = "Tout à vous !"
 
 	_, err := cli.SendMessage(context.Background(), chatJID, &waProto.Message{Conversation: proto.String(msgmap[language]["generic"][0])})
 	_, err = cli.SendMessage(context.Background(), chatJID, &waProto.Message{Conversation: proto.String(msgmap[language]["generic"][1])})
